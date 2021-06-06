@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Product</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="./static/view.css" />
+</head>
+<body>
+	<div class="productTable"></div>
+		<form name="loginForm" action="HarmadikBlokkzaro/product" method="POST">
+			<table>
+				<thead>
+					<tr>
+						<th>Név</th>
+						<th>Típus</th>
+						<th>Ár</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${products.empty}">
+						<td colspan="2">A táblázat nem tartalmaz termékeket</td>
+					</tr>
+					<tr th:each="product : ${products}">
+						<td><span th:text="${product.productName}"> Név </span></td>
+						<td><span th:text="${product.type}"> Típus </span></td>
+						<td><span th:text="${product.price}"> Ár </span></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<h2 th:if="${listByProducts}"></h2>
+</body>
+</html>

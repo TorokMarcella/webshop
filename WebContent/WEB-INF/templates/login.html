@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="./static/view.css" />
+</head>
+<body>
+	<div class="header">
+	</div>
+	<div class="from-wrapper">
+		<h2>Please authenticate yourself!</h2>
+		<h6 th:if="${wrong}">Wrong user name password combination!</h6>
+		<form name="loginForm" action="/HarmadikBlokkzaro/login" method="POST">
+			<table>
+				<tr>
+					<td>User name:</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="button-wrapper"><input
+						class="login-button" type="submit" value="login" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
